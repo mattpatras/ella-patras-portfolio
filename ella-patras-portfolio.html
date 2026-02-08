@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ella Patras - Musical Theater Performer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #ffffff;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.25rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            letter-spacing: 0.3px;
+        }
+
+        nav a:hover {
+            color: #6366f1;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a78bfa 100%);
+            padding: 5rem 2rem;
+        }
+
+        .hero-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .headshot-container {
+            position: relative;
+        }
+
+        .headshot {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-text .tagline {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            opacity: 0.95;
+        }
+
+        .hero-text .details {
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 1);
+            color: #6366f1;
+            transform: translateY(-2px);
+        }
+
+        .social-links svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Section Styling */
+        section {
+            max-width: 1100px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        h2 {
+            color: #1a1a1a;
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        /* About Section */
+        .about-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #404040;
+            margin-bottom: 3rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+            align-items: center;
+        }
+
+        .highlight-card {
+            background: #ffffff;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            border: 1px solid #e5e5e5;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+
+        .highlight-card:hover {
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+            border-color: #6366f1;
+        }
+
+        .highlight-card .icon {
+            display: flex;
+            align-items: center;
+        }
+
+        .highlight-card .icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .highlight-card h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 0;
+        }
+
+        .highlight-card a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .highlight-card a:hover h3 {
+            color: #6366f1;
+        }
+
+        .highlight-card p {
+            display: none;
+        }
+
+        /* Credits Section */
+        .section-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #6366f1;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .credits-grid {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .credit-item {
+            background: #fafafa;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e5e5e5;
+            transition: all 0.2s;
+        }
+
+        .credit-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            background: #ffffff;
+        }
+
+        .credit-line {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .credit-production {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #1a1a1a;
+        }
+
+        .credit-role {
+            color: #1a1a1a;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .credit-role::before {
+            content: "•";
+            margin-right: 0.75rem;
+            color: #d1d5db;
+        }
+
+        .credit-theater {
+            font-size: 0.85rem;
+        }
+
+        .credit-theater a {
+            color: #6366f1;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .credit-theater a:hover {
+            color: #8b5cf6;
+            text-decoration: underline;
+        }
+
+        /* Training Section */
+        .training-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .training-category {
+            background: #fafafa;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .training-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .training-header svg {
+            color: #6366f1;
+        }
+
+        .training-category h3 {
+            color: #1a1a1a;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .training-category p {
+            color: #525252;
+            line-height: 1.7;
+        }
+
+        /* Skills */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-tag {
+            background: #fafafa;
+            color: #1a1a1a;
+            padding: 0.65rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #e5e5e5;
+            transition: all 0.2s;
+        }
+
+        .skill-tag:hover {
+            background: #6366f1;
+            color: white;
+            border-color: #6366f1;
+        }
+
+        /* Awards */
+        .awards-list {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .award-item {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+            transition: all 0.2s;
+        }
+
+        .award-item a {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .award-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(99, 102, 241, 0.3);
+        }
+
+        .award-item svg {
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background: #fafafa;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #e5e5e5;
+            text-align: center;
+        }
+
+        .contact-item svg {
+            color: #6366f1;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: #6366f1;
+        }
+
+        .contact-item .label {
+            color: #737373;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            aspect-ratio: 4/5;
+            background: #f5f5f5;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .gallery-caption h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .gallery-caption p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Pull Quote Section */
+        .pull-quote {
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .pull-quote-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pull-quote blockquote {
+            font-size: 1.8rem;
+            font-weight: 300;
+            line-height: 1.5;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .pull-quote cite {
+            font-size: 1rem;
+            color: #6366f1;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        /* Video Section */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .video-item {
+            background: #fafafa;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e5e5e5;
+            transition: all 0.3s ease;
+        }
+
+        .video-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+        }
+
+        .video-placeholder {
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+        }
+
+        .video-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .video-info p {
+            font-size: 0.9rem;
+            color: #525252;
+        }
+
+        /* Footer */
+        footer {
+            background: #fafafa;
+            border-top: 1px solid #e5e5e5;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            margin-top: 6rem;
+            color: #737373;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .headshot-container {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .credit-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .credit-theater {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            section {
+                margin: 3rem auto;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#credits">Credits</a></li>
+            <li><a href="#training">Training</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div id="home" class="hero">
+        <div class="hero-content">
+            <div class="headshot-container">
+                <img src="headshot.png" class="headshot" alt="Ella Patras Headshot" id="headshot-img">
+            </div>
+            <div class="hero-text">
+                <h1>Ella Patras</h1>
+                <p class="tagline">Musical Theater Performer</p>
+                <p class="details">
+                    Soprano (F3-B5) • She/Her • 5'4"<br>
+                    Oberlin Conservatory of Music, Class of 2028
+                </p>
+                <div class="social-links">
+                    <a href="https://instagram.com" target="_blank" title="Instagram" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" title="Facebook" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+                    </a>
+                    <a href="https://tiktok.com" target="_blank" title="TikTok" aria-label="TikTok">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About</h2>
+        <div class="about-content">
+            <p>Ella Patras is a passionate musical theater performer currently pursuing her Bachelor of Music in Music Theater at the Oberlin Conservatory of Music. With over 10 years of training in voice, acting, and dance, Ella brings versatility and dedication to every role she takes on.</p>
+            
+            <p>Her recent achievements include winning First Place in the 2024 Oscar Hammerstein International Solo Competition (College Division) and being named a Songbook Academy Finalist. Ella has performed in professional, regional, community, and college productions, showcasing her range from leading roles like Wendla in <em>Spring Awakening</em> to ensemble work in beloved classics.</p>
+        </div>
+
+        <div class="highlights">
+            <div class="highlight-card">
+                <a href="https://www.oscarhammersteinaward.org/" target="_blank">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                    </div>
+                    <h3>Hammerstein Award Winner</h3>
+                </a>
+            </div>
+            <div class="highlight-card">
+                <a href="https://www.oberlin.edu/conservatory" target="_blank">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                    </div>
+                    <h3>Oberlin '28</h3>
+                </a>
+            </div>
+            <div class="highlight-card">
+                <a href="https://www.thecenterfortheperformingarts.org/songbook-academy/" target="_blank">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                    </div>
+                    <h3>Songbook Finalist</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credits Section -->
+    <section id="credits">
+        <h2>Performance Credits</h2>
+        
+        <div class="section-label">Professional / Regional Theater</div>
+        <div class="credits-grid">
+            <div class="credit-item">
+                <div class="credit-line">
+                    <span class="credit-production">A Christmas Carol</span>
+                    <span class="credit-role">Martha, Ghost of Christmas Past (u/s)</span>
+                </div>
+                <div class="credit-theater"><a href="https://www.greatlakestheater.org/" target="_blank">Great Lakes Theater</a></div>
+            </div>
+            <div class="credit-item">
+                <div class="credit-line">
+                    <span class="credit-production">Spring Awakening</span>
+                    <span class="credit-role">Wendla</span>
+                </div>
+                <div class="credit-theater"><a href="https://www.beckcenter.org/" target="_blank">Beck Center For the Arts</a></div>
+            </div>
+            <div class="credit-item">
+                <div class="credit-line">
+                    <span class="credit-production">Bright Star</span>
+                    <span class="credit-role">Lucy Grant</span>
+                </div>
+                <div class="credit-theater"><a href="https://www.clintonshowboat.org/" target="_blank">Clinton Area Showboat Theater</a></div>
+            </div>
+            <div class="credit-item">
+                <div class="credit-line">
+                    <span class="credit-production">Joseph and the Amazing Technicolor Dreamcoat</span>
+                    <span class="credit-role">Asher</span>
+                </div>
+                <div class="credit-theater"><a href="https://www.clintonshowboat.org/" target="_blank">Clinton Area Showboat Theater</a></div>
+            </div>
+        </div>
+
+        <div class="section-label">Community / College Theater</div>
+        <div class="credits-grid">
+            <div class="credit-item">
+                <div class="credit-line">
+                    <span class="credit-production">Stranger Sings!</span>
+                    <span class="credit-role">Nancy</span>
+                </div>
+                <div class="credit-theater"><a href="https://www.oberlin.edu/" target="_blank">Oberlin College</a></div>
+            </div>
+            <div class="credit-item">
+                <div class="credit-line">
+                    <span class="credit-production">Mean Girls</span>
+                    <span class="credit-role">Regina George</span>
+                </div>
+                <div class="credit-theater"><a href="https://harlequinproductions.org/" target="_blank">Harlequin Theater</a></div>
+            </div>
+            <div class="credit-item">
+                <div class="credit-line">
+                    <span class="credit-production">You're A Good Man Charlie Brown</span>
+                    <span class="credit-role">Sally Brown</span>
+                </div>
+                <div class="credit-theater"><a href="https://www.mitchellpac.org/" target="_blank">Mitchell Performing Arts Center</a></div>
+            </div>
+            <div class="credit-item">
+                <div class="credit-line">
+                    <span class="credit-production">Anything Goes</span>
+                    <span class="credit-role">Hope Harcourt</span>
+                </div>
+                <div class="credit-theater"><a href="https://harlequinproductions.org/" target="_blank">Harlequin Theater</a></div>
+            </div>
+            <div class="credit-item">
+                <div class="credit-line">
+                    <span class="credit-production">Rent: School Edition</span>
+                    <span class="credit-role">Mimi Marquez</span>
+                </div>
+                <div class="credit-theater"><a href="https://harlequinproductions.org/" target="_blank">Harlequin Theater</a></div>
+            </div>
+            <div class="credit-item">
+                <div class="credit-line">
+                    <span class="credit-production">The Sound of Music</span>
+                    <span class="credit-role">Liesl von Trapp</span>
+                </div>
+                <div class="credit-theater"><a href="https://www.tandcplayers.org/" target="_blank">Town & Country Players</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Section -->
+    <section id="training">
+        <h2>Education & Training</h2>
+        
+        <div class="training-grid">
+            <div class="training-category">
+                <div class="training-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                    <h3>Voice</h3>
+                </div>
+                <p><strong>10+ years of training</strong> including Baldwin Wallace University with Sandra Simon, MTCA with Alex Finke and Betsy Morgan, The Anne Odland Voice Studio, The Conservatory with Faye Meyer, Chamber Choir/Treble Ensemble with director Abby Marchione</p>
+            </div>
+
+            <div class="training-category">
+                <div class="training-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <h3>Dance</h3>
+                </div>
+                <p>Jazz (6 years) • Tap (3 years) • Lyrical (2 years) • Ballet (3 years) • Hip-Hop (4 years) • Modern (1 year)</p>
+            </div>
+
+            <div class="training-category">
+                <div class="training-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"></path><line x1="2" y1="20" x2="2.01" y2="20"></line></svg>
+                    <h3>Acting</h3>
+                </div>
+                <p><strong>10+ years of training</strong> including MTCA with Katie Wieland, Juilliard Summer Performing Arts for Drama, Disney Imagination Campus Performing Arts Workshop, Teen Acting Skills at Town & Country Players, Acting for Film at The Walnut Street Theater</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pull Quote Section -->
+    <div class="pull-quote">
+        <div class="pull-quote-content">
+            <blockquote>"Patras and Renart excel... delivering powerhouse vocals and a healthy dose of attitude"</blockquote>
+            <cite>— River Cities' Reader, Review of Bright Star</cite>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <p style="color: #525252; margin-bottom: 2rem;">Production photos from recent performances</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="video-placeholder">🎭</div>
+                <div class="gallery-caption">
+                    <h3>Spring Awakening</h3>
+                    <p>Wendla • Beck Center for the Arts</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="video-placeholder">🎭</div>
+                <div class="gallery-caption">
+                    <h3>Mean Girls</h3>
+                    <p>Regina George • Harlequin Theater</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="video-placeholder">🎭</div>
+                <div class="gallery-caption">
+                    <h3>The Sound of Music</h3>
+                    <p>Liesl von Trapp • Town & Country Players</p>
+                </div>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem; color: #737373; font-size: 0.9rem;">
+            <em>To add your production photos: Replace placeholder divs with &lt;img src="photo.jpg"&gt; tags</em>
+        </p>
+    </section>
+
+    <!-- Press & Media Section -->
+    <section id="press">
+        <h2>Press & Reviews</h2>
+        
+        <div class="training-grid">
+            <div class="training-category" style="border-left-color: #6366f1;">
+                <h3 style="color: #6366f1; margin-bottom: 1rem;">Bright Star - River Cities' Reader</h3>
+                <p style="font-style: italic; margin-bottom: 1rem;">"To balance the show's heavier emotional moments, we have Alice's charismatic office staff, Daryl and Lucy (Ella Patras), who consistently steal scenes with their sharp comedic timing and lively banter."</p>
+                <p style="font-style: italic;">"Patras and Renart excel in this number, delivering powerhouse vocals and a healthy dose of attitude. It's a much-needed breath of levity that lets both actors flourish and cut loose."</p>
+                <a href="https://www.rcreader.com/theatre/if-you-knew-her-story-bright-star" target="_blank" style="color: #6366f1; text-decoration: none; font-weight: 500; margin-top: 1rem; display: inline-block;">Read Full Review →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards">
+        <h2>Awards & Recognition</h2>
+        <div class="awards-list">
+            <div class="award-item">
+                <a href="https://www.oscarhammersteinaward.org/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                    <span>2024 First Place Winner - Oscar Hammerstein International Solo Competition (College Division)</span>
+                </a>
+            </div>
+            <div class="award-item">
+                <a href="https://www.thecenterfortheperformingarts.org/songbook-academy/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                    <span>Songbook Academy Finalist</span>
+                </a>
+            </div>
+            <div class="award-item">
+                <a href="https://www.schooltheatre.org/thespianfestival" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <span>Outstanding Cast Performance for Mimi in "Rent" at Thespian Conference</span>
+                </a>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 4rem;">Special Skills</h2>
+        <div class="skills-list">
+            <span class="skill-tag">Black Belt in Karate</span>
+            <span class="skill-tag">Jump Roping</span>
+            <span class="skill-tag">Beginner Piano</span>
+            <span class="skill-tag">Beginner Guitar</span>
+            <span class="skill-tag">Sight Singing</span>
+            <span class="skill-tag">Stage Makeup</span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <a href="/cdn-cgi/l/email-protection#e2878e8e83928396908391d1d3a2858f838b8ecc818d8f"><span class="__cf_email__" data-cfemail="395c55555849584d4b584a0a08795e54585055175a5654">[email&#160;protected]</span></a>
+                <div class="label">Email</div>
+            </div>
+            <div class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <a href="tel:215-880-5664">215-880-5664</a>
+                <div class="label">Phone</div>
+            </div>
+            <div class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                <div style="color: #737373; font-weight: 500;">Non-union</div>
+                <div class="label">Status</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Ella Patras. All rights reserved.</p>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Load the actual headshot image from uploads
+        const img = new Image();
+        img.onload = function() {
+            document.getElementById('headshot-img').src = this.src;
+        };
+        img.onerror = function() {
+            console.error('Failed to load headshot image');
+        };
+        img.src = '/mnt/user-data/uploads/Ell_Headsot.png';
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for animation
+        document.querySelectorAll('section, .pull-quote').forEach((section, index) => {
+            section.style.opacity = '0';
+            section.style.animationDelay = `${index * 0.1}s`;
+            observer.observe(section);
+        });
+
+        // Add stagger effect to credit items
+        const creditItems = document.querySelectorAll('.credit-item');
+        creditItems.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.animationDelay = `${index * 0.05}s`;
+            observer.observe(item);
+        });
+    </script>
