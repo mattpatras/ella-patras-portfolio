@@ -255,8 +255,10 @@
         }
 
         .highlight-card:hover {
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.12);
-            border-color: #d4d4d8;
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.2);
+            border-color: #a78bfa;
+            background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 100%);
+            transform: translateY(-2px);
         }
 
         .highlight-card .icon {
@@ -309,13 +311,21 @@
             padding: 1.25rem 1.75rem;
             border-radius: 6px;
             border: 1px solid #e5e5e5;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
         }
 
         .credit-item:hover {
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            background: #ffffff;
-            border-color: #d4d4d8;
+            background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+            border-color: #8b5cf6;
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.3);
+            transform: translateX(4px);
+        }
+
+        .credit-item:hover .credit-production,
+        .credit-item:hover .credit-role,
+        .credit-item:hover .credit-theater,
+        .credit-item:hover .credit-theater a {
+            color: white !important;
         }
 
         .credit-line {
@@ -371,6 +381,14 @@
             border-radius: 8px;
             border: 1px solid #e5e5e5;
             border-left: 3px solid #6366f1;
+            transition: all 0.3s ease;
+        }
+
+        .training-category:hover {
+            background: #ffffff;
+            border-left-color: #a78bfa;
+            box-shadow: 0 4px 16px rgba(139, 92, 246, 0.15);
+            transform: translateY(-2px);
         }
 
         .training-header {
@@ -416,9 +434,11 @@
         }
 
         .skill-tag:hover {
-            background: #6366f1;
+            background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
             color: white;
-            border-color: #6366f1;
+            border-color: #8b5cf6;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+            transform: translateY(-2px);
         }
 
         /* Awards */
@@ -527,8 +547,9 @@
 
         .gallery-item:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+            box-shadow: 0 12px 30px rgba(139, 92, 246, 0.25);
             z-index: 10;
+            border-color: #a78bfa;
         }
 
         .gallery-item img {
@@ -754,7 +775,7 @@
             </div>
             <div class="hero-text">
                 <h1>Ella Patras</h1>
-                <p class="tagline">Musical Theater Performer</p>
+                <p class="tagline">Singer, Actor, Dancer, and Model</p>
                 <p class="details">
                     Soprano (F3-B5) • She/Her • 5'4"<br>
                     Oberlin Conservatory of Music, Class of 2028
@@ -769,12 +790,6 @@
                 <div class="social-links">
                     <a href="https://www.instagram.com/ella.patras/?hl=en" target="_blank" title="Instagram" aria-label="Instagram">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    </a>
-                    <a href="https://facebook.com" target="_blank" title="Facebook" aria-label="Facebook">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-                    </a>
-                    <a href="https://linkedin.com" target="_blank" title="LinkedIn" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
                     </a>
                     <a href="https://www.tiktok.com/@_ellapatras?lang=en" target="_blank" title="TikTok" aria-label="TikTok">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
@@ -1090,7 +1105,7 @@
         <div class="contact-grid">
             <div class="contact-item">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                <a href="/cdn-cgi/l/email-protection#44212828253425303625377775042329252d286a272b29"><span class="__cf_email__" data-cfemail="0c6960606d7c6d787e6d7f3f3d4c6b616d6560226f6361">[email&#160;protected]</span></a>
+                <a href="mailto:ellapatras31@gmail.com">ellapatras31@gmail.com</a>
                 <div class="label">Email</div>
             </div>
             <div class="contact-item">
@@ -1111,7 +1126,7 @@
         <p>&copy; 2026 Ella Patras. All rights reserved.</p>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
